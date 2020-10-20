@@ -35,4 +35,7 @@ void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
+int lomuto_partision(int *array, size_t size, int first_elmt, int last_elmt);
+void method_quick_sort(int *array, size_t size, int left, int right);
+void swap(int *array, size_t size, int a, int b);
 #endif /* _SORT_H_ */
