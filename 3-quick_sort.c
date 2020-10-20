@@ -14,7 +14,7 @@ void quick_sort(int *array, size_t size)
 }
 /**
  * swap - mehtod that swapping
- * @array: the array
+ * @array: this is the  array
  * @size: size of array
  * @a: varieble
  * @b: variable
