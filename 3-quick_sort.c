@@ -60,15 +60,16 @@ void method_quick_sort(int *array, size_t size, int left, int right)
 int lomuto_partision(int *array, size_t size, int first_elmt, int last_elmt)
 {
 	int pivot = array[last_elmt];
-	int left = first_elmt, right = last_elmt, iterator;
+	int left = first_elmt, right = last_elmt, iterator = left;
 
-	for (iterator = left; iterator <= right; iterator++)
+	while (iterator <= right)
 	{
 		if (array[iterator] < pivot)
 		{
 			swap(array, size, left, iterator);
 			left++;
 		}
+		iterator++;
 	}
 	swap(array, size, left, right);
 	return (left);
