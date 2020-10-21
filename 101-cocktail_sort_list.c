@@ -46,6 +46,7 @@ void cocktail_sort_list(listint_t **list)
 			}
 			if (runner->n < step->n)
 			{
+				done = 0;
 				swap_node(list, runner, fwd);
 				print_list(*list);
 			}
