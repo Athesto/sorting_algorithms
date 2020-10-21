@@ -1,7 +1,9 @@
 CC=gcc -g -Wall -Wextra -Werror -pedantic
 
 %:
+	clear
 	$(CC) $(files)
+	./a.out
 	betty-style $(files)
 	betty-doc $(files)
 
