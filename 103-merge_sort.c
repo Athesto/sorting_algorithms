@@ -34,9 +34,9 @@ int *max_length(int *array, unsigned int size)
 	return (array);
 }
 /**
- * merge_sort - ?
- * @array: ?
- * @size: ?
+ * merge_sort - sorting algorithm
+ * @array: thias is the array
+ * @size: this is the size of the array
  */
 void merge_sort(int *array, size_t size)
 {
