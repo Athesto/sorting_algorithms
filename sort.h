@@ -38,4 +38,6 @@ void insertion_sort_list(listint_t **list);
 int lomuto_partision(int *array, size_t size, int first_elmt, int last_elmt);
 void method_quick_sort(int *array, size_t size, int left, int right);
 void swap(int *array, size_t size, int a, int b);
+int max_element(int *array, size_t size);
+int *max_length(int *array, unsigned int size);
 #endif /* _SORT_H_ */
