@@ -39,8 +39,8 @@ void cocktail_sort_list(listint_t **list)
 				continue;
 			}
 		}
-		/* is fwd && a < b? or is bwd && a > b */
-		if (fwd ^ (runner->n < step->n))
+		/* is fwd && a > b? or is bwd && a < b */
+		if (!(fwd ^ (runner->n > step->n)) && runner->n != step->n)
 		{
 			done = 0;
 			swap_node(list, runner, fwd);
