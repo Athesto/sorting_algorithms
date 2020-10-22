@@ -7,9 +7,9 @@ void swap_node(listint_t **list, listint_t *node, int fwd);
 void cocktail_sort_list(listint_t **list)
 {
 	listint_t *runner;
-	listint_t *step; /* next or previus node depending fwd */
-	int fwd = 1; /* sorting forward(1), backward(0) */
-	int done = 0; /* finish */
+	listint_t *step;
+	int fwd = 1;
+	int done = 0;
 
 	if (!list || !*list)
 		return;
@@ -19,35 +19,40 @@ void cocktail_sort_list(listint_t **list)
 		if (fwd)
 		{
 			step = runner->next;
-			/* is the end of the line? */
 			if (!step)
 			{
 				done = 1;
 				fwd = !fwd;
 				continue;
 			}
+			if (runner->n > step->n)
+			{
+				done = 0;
+				swap_node(list, runner, fwd);
+				print_list(*list);
+			}
+			else
+				runner = step;
 		}
 		else
 		{
 			step = runner->prev;
-			/* is the beginning of line? */
 			if (!step)
 			{
-				if (done) /* did run backward and forward without change? */
+				if (done)
 					break;
 				fwd = !fwd;
 				continue;
 			}
+			if (runner->n < step->n)
+			{
+				done = 0;
+				swap_node(list, runner, fwd);
+				print_list(*list);
+			}
+			else
+				runner = step;
 		}
-		/* is fwd && a < b? or is bwd && a > b */
-		if (fwd ^ (runner->n < step->n))
-		{
-			done = 0;
-			swap_node(list, runner, fwd);
-			print_list(*list);
-		}
-		else
-			runner = step;
 	}
 }
 /**

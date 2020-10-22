@@ -1,4 +1,4 @@
-CC=gcc -g -Wall -Wextra -Werror -pedantic
+CC=gcc -g -Wall -Wextra -Werror -pedantic --std=c90
 
 %:
 	clear
